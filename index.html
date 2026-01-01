@@ -6,21 +6,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=0.75, user-scalable=no"">
 
   <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
-    <style>
+  <style>
 
-
-
-        body {
-            font-family: Arial, sans-serif;
-        }
-      #SFctr {
- 	font-family: Arial, Helvetica, sans-serif !important;
+      body {
+          font-family: Arial, sans-serif;
+      }
+    #SFctr {
+  font-family: Arial, Helvetica, sans-serif !important;
 }
+      iframe {
+          width: 100%;
+          max-width: 900px;
+          height: 750px;
+          border: none;
+          margin: 20px auto;
+          display: block;
+      }
+      
+      
+      @media (max-width: 600px) and (hover: none) {
         iframe {
-            width: 100%;
-            height: 750px;
-            border: none;
+          height: 790px;
         }
+        
+        .terms-disclaimer {
+          font-size: 7px !important;
+        }
+      }
 
 
 
@@ -34,32 +46,32 @@ transform: translateX(-50%); /* Center the navigation */
 }
 
 .header {
-  font-family: system-ui;
-  padding: 20px;
-  text-align: center;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+font-family: system-ui;
+padding: 20px;
+text-align: center;
+color: #fff;
+display: flex;
+align-items: center;
+justify-content: space-between;
 background: #1a1a1a;
 }
 
 .header .logo {
-  display: flex;
-  align-items: center;
+display: flex;
+align-items: center;
 }
 
 .header .logo img {
-  width: 40px;
-  height: 40px;
+width: 40px;
+height: 40px;
 opacity: 0.84;
 }
 
 .header .logo-text {
-  margin-left: 10px;
-  font-size: 20px;
+margin-left: 10px;
+font-size: 20px;
 color: #444444;
-  font-weight: 600;
+font-weight: 600;
 }
 
 /* Group search and language buttons */
@@ -92,200 +104,390 @@ color: #1e1e1f;
 }
 
 header a {
-      color: #DADADA;
-      text-decoration: none;
+    color: #DADADA;
+    text-decoration: none;
 
-    }
+  }
 
 
 
 .footer {
-  font-family: system-ui;
-  background: #F2F2F2;
-  padding: 20px;
-  text-align: center;
-  color: #fff;
+font-family: system-ui;
+background: #F2F2F2;
+padding: 20px;
+text-align: center;
+color: #fff;
 }
 
 .footer .logo {
-  display: flex;
-  justify-content: center;
+display: flex;
+justify-content: center;
 }
 
 .footer .description {
-  font-size: 20px;
-  margin-bottom: 0px;
+font-size: 20px;
+margin-bottom: 0px;
 color: black;
 }
 
 .footer .info {
-  font-size: 16px;
-  opacity: 0.8;
+font-size: 16px;
+opacity: 0.8;
 }
 
 .footer .divider {
-  border: none;
-  border-bottom: 1px solid #fff;
-  margin: 25px 0;
-  opacity: 0.2;
+border: none;
+border-bottom: 1px solid #fff;
+margin: 25px 0;
+opacity: 0.2;
 }
 
 .footer .sub-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+display: flex;
+align-items: center;
+justify-content: space-between;
 }
 
 .footer .sub-footer .terms,
 .footer .sub-footer .privacy,
 .footer .sub-footer .glossary {
 font-size: 17px;
-  margin-left: 10px;
-  text-decoration: none;
-  color: black;
+margin-left: 10px;
+text-decoration: none;
+color: black;
 }
 
 .logo img {
-  width: 50px;
-  height: 50px;
+width: 50px;
+height: 50px;
 }
 
 
 
 .footer-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* Align items at the top */
-  flex-wrap: wrap; /* Add flex-wrap property to wrap the content on smaller screens */
+display: flex;
+justify-content: space-between;
+align-items: flex-start; /* Align items at the top */
+flex-wrap: wrap; /* Add flex-wrap property to wrap the content on smaller screens */
 }
 
 .google-play-container {
-  display: flex;
-  flex-direction: column; /* Arrange items in a column */
-  align-items: flex-end; /* Align items to the right */
-  margin-top: -20px; /* Adjust the margin-top to remove the space */
+display: flex;
+flex-direction: column; /* Arrange items in a column */
+align-items: flex-end; /* Align items to the right */
+margin-top: -20px; /* Adjust the margin-top to remove the space */
 }
 
 .google-play-container img {
-  width: 182px;
-  height: 70px;
+width: 182px;
+height: 70px;
 }
 
 .description,
 .info,
 .divider,
 .sub-footer {
-  flex-basis: 100%;
+flex-basis: 100%;
 color: black;
 }
 
 .footer p {
-  margin-bottom: 0; /* Remove bottom margin from the paragraph elements */
+margin-bottom: 0; /* Remove bottom margin from the paragraph elements */
+}
+
+/* League logos carousel */
+.leagues-carousel-section {
+  background: #1a1a1a;
+  padding: 10px 0 16px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  transition: transform 0.3s ease;
+}
+
+.leagues-carousel-section.hidden {
+  transform: translateY(100%);
+}
+
+.leagues-carousel-title {
+  text-align: center;
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 23px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.leagues-carousel-track {
+  display: flex;
+  animation: scroll 50s linear infinite;
+  width: max-content;
+}
+
+.league-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 15px;
+  min-width: 120px;
+}
+
+.league-logo-wrapper img {
+  height: 38px;
+  width: auto;
+}
+
+.league-logo-wrapper img[alt="Primeira Liga"] {
+  filter: brightness(0) saturate(100%) invert(95%) sepia(8%) saturate(200%) hue-rotate(200deg);
+}
+
+.league-logo-wrapper.text-logo {
+  font-size: 7.5px;
+  color: #666;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.league-logo-wrapper.text-logo span {
+  margin-top: 1px;
+}
+
+.league-logo-wrapper.text-logo iconify-icon {
+  font-size: 26px;
+  color: #666;
+  display: block !important;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  min-height: 26px;
+  flex-shrink: 0;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 1;
+  transform: translateZ(0) translateY(2px);
+  will-change: auto;
+}
+
+.league-logo-wrapper.text-logo:hover {
+  color: #666;
+}
+
+.league-logo-wrapper.text-logo:hover iconify-icon {
+  color: #666;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 767px) {
+  .leagues-carousel-section {
+    padding: 10px 0 15px 0;
+  }
+  
+  .leagues-carousel-title {
+    font-size: 10px;
+    margin-bottom: 16px;
+    letter-spacing: 1.2px;
+  }
+  
+  .league-logo-wrapper {
+    padding: 0 12px;
+    min-width: 100px;
+  }
+  
+  .league-logo-wrapper img {
+    height: 30px;
+  }
+  
+  .league-logo-wrapper.text-logo {
+    font-size: 8px;
+  }
 }
 
 body {
-background: #1a1a1a;
+  background: #1a1a1a;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
-color: #DADADA;
-margin-left: 8px;
-font-family:Arial, Helvetica, sans-serif;
-font-size: 29px        
+  color: #DADADA;
+  margin-left: 8px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 29px;
 }
 
 h2 {
-font-size: 21px        
+  font-size: 21px;
 }
 
-            .desktop-text {
-  display: inline;
+/* Main content spacing */
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+          .desktop-text {
+display: inline;
 }
 
 /* Styles for mobile */
 .mobile-text {
-  display: none;
+display: none;
 }
 
 /* Media query for screen sizes less than or equal to 768px (you can adjust this value as needed) */
 @media (max-width: 768px) {
-  /* Hide desktop text on mobile */
-  .desktop-text {
-    display: none;
-  }
+/* Hide desktop text on mobile */
+.desktop-text {
+  display: none;
+}
 
-  /* Show mobile text on mobile */
-  .mobile-text {
-    display: inline;
-  }
+/* Show mobile text on mobile */
+.mobile-text {
+  display: inline;
+}
+}
+
+#button-group-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px auto 10px;
+  max-width: 400px;
+  padding: 0 20px;
 }
 
 #proceedBtn {
-  display: block; /* You can use "block" or "inline-block" depending on your layout needs */
-margin: 0 auto;
-background-color: pink;
-Font-size: 22px;
-width: 318px;
-Height: 49px;
-border-radius: 20px;
-            border: 1px solid pink;
-Cursor: pointer;
+  background-color: #0099dd;
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
+  max-width: 320px;
+  height: 54px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
 
+#proceedBtn:hover {
+  background-color: #0088cc;
+}
+
+@media (max-width: 767px) {
+  #button-group-container {
+    padding: 0 15px;
+    margin: 25px auto 10px;
+  }
+  
+  #proceedBtn {
+    font-size: 18px;
+    height: 50px;
+  }
 }
 
 
-.terms {
-    text-align: center; /* Center-align the text within the container */
-    margin: auto;
-    margin-bottom: 5px; /* Use lowercase 'm' for margin-bottom */
-    font-size: 1em; /* Use lowercase 'f' for font-size */
-    color: #fff;
+
+.terms-disclaimer {
+  text-align: center;
+  margin: 12px auto;
+  font-size: 11px;
+  color: #888;
+  max-width: 400px;
 }
 
-     
+.terms-disclaimer a {
+  color: #999;
+  text-decoration: underline;
+}
+
+.terms-disclaimer a:hover {
+  color: #aaa;
+}
+
+   
 .image-container {
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-    
-    margin: 0 auto; /* Center the container horizontally */
-
-    /* Default width for desktop */
-    width: 75%;
+  position: relative;
+  overflow: visible; /* Allow arrows to show outside in margins */
+  margin: 30px auto;
+  width: 75%;
+  max-width: 900px;
 }
 
 /* Media query for mobile devices */
 @media (max-width: 767px) {
-    .image-container {
-        width: 99%;
-            height: 102%;
-    }
+  .image-container {
+    width: 95%;
+    margin: 20px auto;
+  }
+}
+
+.image-container2 {
+  overflow: hidden; /* Keep images clipped properly */
+  display: none !important;
+}
+
+.image-container2.active {
+  display: block !important;
+}
+
+.image-container2.active.animate {
+  animation: fadeIn 0.52s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .image-container img {
-    display: block;
-    width: 100%;
-    height: auto;
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
-.terms a {
-    color: #fff; /* Set the anchor color to white */
-    text-decoration: underline; /* Add underline to the link */
-}
 
 
 /* Center the "What's Included" button */
 #whatsIncludedBtn {
-  display: block;
-  margin: 0 auto;
-  background: none;
-  border: none;
-  padding: 0;
-  font-size: 15px;
-  color: white; /* Set link color */
-  text-decoration: underline;
-  cursor: pointer;
-  transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
+display: block;
+margin: 0 auto;
+background: none;
+border: none;
+padding: 0;
+font-size: 15px;
+color: white; /* Set link color */
+text-decoration: underline;
+cursor: pointer;
+transition: transform 0.3s ease-in-out; /* Add a smooth transition effect */
 
 }
 
@@ -293,340 +495,597 @@ Cursor: pointer;
 
 /* Add these styles to center the image */
 #imageContainer {
-  display: none;
-  text-align: center;
+display: none;
+text-align: center;
 }
 
 #imageContainer img {
-  max-width: 100%;
-  border-radius: 20px;
+max-width: 100%;
+border-radius: 20px;
 }
 
 .image-container2 {
-    display: block;
-    max-width: 100%;
-}
-
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: #ffffff;
-    font-weight: bold;
-    font-size: 4vh;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-}
-
-.prev {
-    left: -10px;
+  display: block;
+  max-width: 100%;
 }
 
 .next {
-    right: -10px;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 10px 14px;
+  margin-top: -2px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 28px;
+  background: rgba(0, 0, 0, 0.3);
+  right: -10px;
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  border-radius: 6px;
+}
+
+.next:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* When arrow is outside the image (in margin) */
+.next.outside {
+  background: rgba(0, 0, 0, 0.3);
+  right: -80px;
+}
+
+.next.outside:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 767px) {
+  .next {
+    padding: 8px 12px;
+    font-size: 24px;
+    right: -5px;
+  }
+  
+  .next.outside {
+    right: -70px;
+  }
 }
 
 
 #language-switcher iconify-icon {
-  font-size: 20px;
-  vertical-align: middle;
-  display: inline-block;
+font-size: 20px;
+vertical-align: middle;
+display: inline-block;
 }
 
 #language-switcher option {
-  padding: 5px;
-  display: flex;
-  align-items: center;
-  z-index: 100000;
+padding: 5px;
+display: flex;
+align-items: center;
+z-index: 100000;
 }
 
 .language-switcher-container {
-  position: relative;
-  display: inline-block;
-  z-index: 100000;
+position: relative;
+display: inline-block;
+z-index: 100000;
 
 
 }
 
 .language-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  color: #DADADA;
-  display: flex;
-  align-items: center;
-  font-size: 17px;
+background: none;
+border: none;
+cursor: pointer;
+padding: 10px;
+color: #DADADA;
+display: flex;
+align-items: center;
+font-size: 17px;
 }
 
 .language-button iconify-icon {
-  font-size: 24px;
-  opacity: 0.7;
+font-size: 24px;
+opacity: 0.7;
 }
 
 .language-dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: #2a2a2a;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-  padding: 10px;
-  width: 200px;
+display: none;
+position: absolute;
+top: 100%;
+right: 0;
+background: #2a2a2a;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+padding: 10px;
+width: 200px;
 }
 
 .language-option {
-  display: flex;
-  align-items: center;
-  padding: 8px 12px;
-  cursor: pointer;
-  border-radius: 4px;
-  color: #DADADA;
-  text-decoration: none;
+display: flex;
+align-items: center;
+padding: 8px 12px;
+cursor: pointer;
+border-radius: 4px;
+color: #DADADA;
+text-decoration: none;
 }
 
 .language-option:hover {
-  background: #3a3a3a;
+background: #3a3a3a;
 }
 
 .language-option iconify-icon {
-  margin-right: 10px;
-  font-size: 20px;
+margin-right: 10px;
+font-size: 20px;
 }
 
 .language-dropdown.show {
-  display: block;
+display: block;
 }
 
-    </style>
+/* Stripe and Gift options styling */
+#stripeOption {
+  display: none;
+  max-width: 900px;
+  margin: 20px auto;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.payment-options-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.stripe-section, .gift-section {
+  position: relative;
+  font-size: 13px;
+  color: #999;
+  display: inline-block;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.gift-section {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gift-section::before {
+  content: "•";
+  color: #666;
+  font-size: 13px;
+  margin-right: 8px;
+}
+
+.stripe-section a, .gift-section a {
+  color: #0099dd;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+  font-size: 13px;
+}
+
+.stripe-section a:hover, .gift-section a:hover {
+  color: #0088cc;
+}
+
+#stripeDropdown, #giftDropdown {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 100%;
+  margin-bottom: 10px;
+  background: #2a2a2a;
+  border: 1px solid #00aaee;
+  border-radius: 8px;
+  min-width: 240px;
+  z-index: 1000;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  white-space: nowrap;
+}
+
+#stripeDropdown a, #giftDropdown a {
+  display: block;
+  padding: 12px 20px;
+  color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #333;
+  transition: background 0.2s ease;
+}
+
+#stripeDropdown a:first-child, #giftDropdown a:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+#stripeDropdown a:last-child, #giftDropdown a:last-child {
+  border-bottom: none;
+  border-radius: 0 0 8px 8px;
+}
+
+#stripeDropdown a:hover, #giftDropdown a:hover {
+  background: #3a3a3a;
+}
+
+@media (max-width: 767px) {
+  .payment-options-wrapper {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .gift-section::before {
+    display: none;
+  }
+  
+  #stripeDropdown, #giftDropdown {
+    min-width: 200px;
+  }
+}
+
+  </style>
+
 </head>
-<body><br>
-<br><div class="image-container">
-    <div class="image-container2">
-      <img class="slides" src="https://datamb.football/PRO1/1.webp" alt="">
-    </div>
-    <div class="image-container2">
-         <img class="slides" src="https://datamb.football/PRO1/2.webp" alt="">
-    </div>
-        <div class="image-container2">
-      <img class="slides" src="https://datamb.football/PRO1/3.webp" alt="">
-    </div>
-        <div class="image-container2">
-      <img class="slides" src="https://datamb.football/PRO1/4.webp" alt="">
-    </div>
-        <div class="image-container2">
-      <img class="slides" src="https://datamb.football/PRO1/5.webp" alt="">
-    </div>
-        <div class="image-container2">
-      <img class="slides" src="https://datamb.football/PRO1/6.webp" alt="">
-    </div>
-            <div class="image-container2">
-      <img class="slides" src="https://datamb.football/PRO1/7.webp" alt="">
-    </div>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+<body>
+
+<div class="image-container">
+  <div class="image-container2">
+    <img class="slides" src="https://datamb.football/PRO1/1.webp" alt="">
   </div>
+  <div class="image-container2">
+       <img class="slides" src="https://datamb.football/PRO1/2.webp" alt="">
+  </div>
+      <div class="image-container2">
+    <img class="slides" src="https://datamb.football/PRO1/3.webp" alt="">
+  </div>
+      <div class="image-container2">
+    <img class="slides" src="https://datamb.football/PRO1/4.webp" alt="">
+  </div>
+      <div class="image-container2">
+    <img class="slides" src="https://datamb.football/PRO1/5.webp" alt="">
+  </div>
+      <div class="image-container2">
+    <img class="slides" src="https://datamb.football/PRO1/6.webp" alt="">
+  </div>
+          <div class="image-container2">
+    <img class="slides" src="https://datamb.football/PRO1/7.webp" alt="">
+  </div>
+  <a class="next">&#10095;</a>
+</div>
+
+
+<script>
+  var slideIndex = 0;
+  var nextArrow = null;
+  var imageContainer = null;
+
+  // Initialize after DOM loads
+  document.addEventListener('DOMContentLoaded', function() {
+    nextArrow = document.querySelector('.next');
+    imageContainer = document.querySelector('.image-container');
+    
+    // Add click event listener
+    if (nextArrow) {
+      nextArrow.addEventListener('click', function() {
+        plusSlides(1);
+      });
+    }
+    
+    // Position arrow on load and resize
+    positionArrow();
+    window.addEventListener('resize', positionArrow);
+    
+    // Initialize first slide
+    var slides = document.getElementsByClassName("image-container2");
+    if (slides.length > 0) {
+      slides[0].classList.add("active");
+    }
+  });
+
+  function plusSlides(n) {
+    slideIndex += n;
+    showSlides(true); // With animation when clicking arrow
+  }
+
+  function currentSlide(n) {
+    slideIndex = n;
+    showSlides(true);
+  }
+
+  function showSlides(withAnimation) {
+    var i;
+    var slides = document.getElementsByClassName("image-container2");
+    if (slideIndex >= slides.length) {slideIndex = 0}
+    if (slideIndex < 0) {slideIndex = slides.length - 1}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+      slides[i].classList.remove("animate");
+    }
+    slides[slideIndex].classList.add("active");
+    if (withAnimation) {
+      slides[slideIndex].classList.add("animate");
+    }
+  }
+
+  function positionArrow() {
+    if (!imageContainer || !nextArrow) return;
+    
+    // Get container position and dimensions
+    var containerRect = imageContainer.getBoundingClientRect();
+    var pageWidth = window.innerWidth;
+    
+    // Calculate margin space on right side
+    var rightMargin = pageWidth - containerRect.right;
+    
+    // Required space for arrow to be outside (arrow width ~50-60px)
+    var requiredSpace = 60;
+    
+    // Position RIGHT arrow - outside in margin if there's space, inside if not
+    if (rightMargin >= requiredSpace) {
+      nextArrow.classList.add('outside');
+    } else {
+      nextArrow.classList.remove('outside');
+    }
+  }
+</script>
+
+
+
+
+  <div id="button-group-container">
+    
+    <button id="proceedBtn" data-i18n="join.button.subscribe">Subscribe</button>
+  </div>
+
+  <div class="terms-disclaimer">
+    <span data-i18n="join.terms.disclaimer">By subscribing, you agree to our</span> 
+    <a href="https://datamb.football/tos" target="_blank" data-i18n="join.terms.conditions">Terms and Conditions</a>
+  </div>
+
+  
+
   <br>
-  <script>
-    var slideIndex = 0;
-    showSlides();
+
+  <iframe id="subscriptionFrame" src="" frameborder="0"></iframe>
   
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-  
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-  
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("slides");
-      if (slideIndex >= slides.length) {slideIndex = 0}
-      if (slideIndex < 0) {slideIndex = slides.length - 1}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slides[slideIndex].style.display = "block";  
-    }
-  </script>
-
-  
-  
-
-    <div class="terms">
-
-   
-        <label class="terms-checkbox">
-            <input type="checkbox" id="agreeCheckbox">
-            <span data-i18n="join.terms.agree">I agree to the</span> <a href="https://datamb.football/tos" target="_blank" data-i18n="join.terms.conditions">Terms and Conditions</a>
-
-        </label>
-    </div><br>
-
-    <button id="proceedBtn" disabled data-i18n="join.button.subscribe">SUBSCRIBE</button><br><br>
-
-    <iframe id="subscriptionFrame" src="" frameborder="0"></iframe>
-    <div id="stripeOption" style="display:none; max-width: 600px; text-align: left;">
-      <span style="font-size: 14px; color: #b0e0ff; position: relative; margin-left: 5px;">
-        <span data-i18n="join.stripe.trouble">Trouble with Payment?</span> 
-        <a href="#" id="stripeDropLink" style="color: #00aaff; text-decoration: underline;" data-i18n="join.stripe.subscribe">Subscribe via Stripe</a>
-        <div id="stripeDropdown" style="display:none; position:absolute; left:100px; bottom:28px; background:#232323; border:1px solid #00aaff; border-radius:0px; min-width:220px; z-index:1000; box-shadow: 0 4px 16px rgba(0,0,0,0.18);">
-          <a href="https://buy.stripe.com/fZubJ1c3h9IXaBxgYhcbC0a" style="display:block; padding:10px 18px; color:#fff; text-decoration:none; border-bottom:1px solid #222;" data-i18n="join.stripe.monthly">Monthly (€9.99)</a>
-          <a href="https://buy.stripe.com/00weVdebpaN1aBx8rLcbC09" style="display:block; padding:10px 18px; color:#fff; text-decoration:none; border-bottom:1px solid #222;" data-i18n="join.stripe.6months">6 Months (€54.99)</a>
-          <a href="https://buy.stripe.com/5kQ5kDebpf3h7pl23ncbC08" style="display:block; padding:10px 18px; color:#fff; text-decoration:none;" data-i18n="join.stripe.yearly">1 Year (€104.99)</a>
+  <div id="stripeOption">
+    <div class="payment-options-wrapper">
+      <div class="stripe-section">
+        <span data-i18n="join.stripe.trouble">Trouble with payment?</span> 
+        <a href="#" id="stripeDropLink" data-i18n="join.stripe.subscribe">Subscribe via Stripe</a>
+        <div id="stripeDropdown">
+          <a href="https://buy.stripe.com/fZubJ1c3h9IXaBxgYhcbC0a" data-i18n="join.stripe.monthly">Monthly (€9.99)</a>
+          <a href="https://buy.stripe.com/00weVdebpaN1aBx8rLcbC09" data-i18n="join.stripe.6months">6 Months (€54.99)</a>
+          <a href="https://buy.stripe.com/5kQ5kDebpf3h7pl23ncbC08" data-i18n="join.stripe.yearly">1 Year (€104.99)</a>
         </div>
-      </span>
-    </div><br>
+      </div>
+      
+      <div class="gift-section">
+        <span data-i18n="join.gift.question">For someone else?</span>
+        <a href="#" id="giftDropLink">
+          <span data-i18n="join.gift.link">Gift a membership</span>
+        </a>
+        <div id="giftDropdown">
+          <a href="https://buy.stripe.com/9B6dR95ET7AP5hd37rcbC0g" data-i18n="join.gift.1month">Gift 1 Month (€9.99)</a>
+          <a href="https://buy.stripe.com/6oUcN50kzf3h10XbDXcbC0f" data-i18n="join.gift.3months">Gift 3 Months (€28.99)</a>
+          <a href="https://buy.stripe.com/5kQ7sL5ETcV97pl5fzcbC0e" data-i18n="join.gift.6months">Gift 6 Months (€54.99)</a>
+          <a href="https://buy.stripe.com/aFa3cv9V91cr5hd5fzcbC0d" data-i18n="join.gift.1year">Gift 1 Year (€104.99)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br>
 
-    <script>
-        const agreeCheckbox = document.getElementById('agreeCheckbox');
-        const proceedBtn = document.getElementById('proceedBtn');
-        const subscriptionFrame = document.getElementById('subscriptionFrame');
-        const expandBtn = document.getElementById('expandBtn');
-        const expandableTerms = document.getElementById('expandableTerms');
 
-        agreeCheckbox.addEventListener('change', () => {
-            proceedBtn.disabled = !agreeCheckbox.checked;
-        });
+  <script>
+      const proceedBtn = document.getElementById('proceedBtn');
+      const subscriptionFrame = document.getElementById('subscriptionFrame');
 
-        proceedBtn.addEventListener('click', () => {
+      proceedBtn.addEventListener('click', () => {
         subscriptionFrame.src = 'https://datamb.football/sign-up';
         subscriptionFrame.scrollIntoView({ behavior: 'smooth' });
         document.getElementById('stripeOption').style.display = 'block';
-    });
-
-    const stripeDropLink = document.getElementById('stripeDropLink');
-    const stripeDropdown = document.getElementById('stripeDropdown');
-
-    stripeDropLink.addEventListener('click', function(e) {
-      e.preventDefault();
-      stripeDropdown.style.display = (stripeDropdown.style.display === 'block') ? 'none' : 'block';
-    });
-
-    document.addEventListener('click', function(event) {
-      if (!stripeDropLink.contains(event.target) && !stripeDropdown.contains(event.target)) {
-        stripeDropdown.style.display = 'none';
-      }
-    });
-
-    </script>
-
-
-
-
-  <script>
- function setLanguage(language) {
-    localStorage.setItem('preferredLanguage', language);
-    const url = new URL(window.location.href);
-    if (language === 'en') {
-      url.searchParams.delete('lang');
-      applyLanguage('xx');
-    } else {
-      url.searchParams.set('lang', language);
-      applyLanguage(language);
-    }
-    window.history.pushState({}, '', url);
-  }
-  
-  function getPreferredLanguage() {
-    // PRIORITY 1: Check URL parameter first
-    const urlParams = new URLSearchParams(window.location.search);
-    const langParam = urlParams.get('lang');
-    if (langParam) {
-      return langParam;
-    }
-    // PRIORITY 2: Check localStorage
-    const storedLang = localStorage.getItem('preferredLanguage');
-    if (storedLang) {
-      return storedLang;
-    }
-    // PRIORITY 3: Use browser language
-    return getBrowserLanguage() || 'en';
-  }
-
-  function getBrowserLanguage() {
-    return navigator.language.slice(0, 2);
-  }
-
-  function applyLanguage(language) {
-    console.log(language);
-
-    if (language === 'en') {
-      return;
-    }
-
-    
-    fetch(`locales/${language}.json`)
-      .then(response => {
-        // Don't throw an error, just return null if response is not OK
-        return response.ok ? response.json() : null;
-      })
-      .then(translations => {
-        // Only proceed if translations exist
-        if (translations) {
-          document.querySelectorAll('[data-i18n]').forEach(element => {
-            const keys = element.getAttribute('data-i18n').split('.');
-            let value = translations;
-            for (const key of keys) {
-              if (value === undefined || value === null) break;
-              value = value[key];
-            }
-            if (value) {
-              if (element.tagName === 'META') {
-              element.setAttribute('content', value);
-          } else if (value.includes('<')) {
-              element.innerHTML = value;
-          } else {
-              element.textContent = value;
-          }          }
-          });
-          // REMOVE FOR PAGES WITH NO METADATA
-          document.querySelector('meta[name="language"]').setAttribute('content', language);
+        
+        // Hide the leagues carousel
+        const leaguesCarousel = document.querySelector('.leagues-carousel-section');
+        if (leaguesCarousel) {
+          leaguesCarousel.classList.add('hidden');
         }
-      })
-      .catch(() => {
-        // Completely empty catch block to silently ignore any errors
       });
-  }
-  
-  const preferredLanguage = getPreferredLanguage();
-  applyLanguage(preferredLanguage);
-  
-  // BUTTON LANGUAGE SWITCHER REMOVE FOR PAGES WITH NO LANGUAGE SWITCHER
-  document.addEventListener('DOMContentLoaded', function() {
-    const languageButton = document.getElementById('languageButton');
-    const languageDropdown = document.getElementById('languageDropdown');
-    
 
-    if (languageButton) {
-      languageButton.addEventListener('click', function(e) {
-        e.stopPropagation();
-        languageDropdown.classList.toggle('show');
-      });
-    }
-  
-    document.querySelectorAll('.language-option').forEach(option => {
-      option.addEventListener('click', function(e) {
+      const stripeDropLink = document.getElementById('stripeDropLink');
+      const stripeDropdown = document.getElementById('stripeDropdown');
+
+      stripeDropLink.addEventListener('click', function(e) {
         e.preventDefault();
-        const lang = this.getAttribute('href').split('=')[1];
-        setLanguage(lang);
-        languageDropdown.classList.remove('show');
+        stripeDropdown.style.display = (stripeDropdown.style.display === 'block') ? 'none' : 'block';
+        // Close gift dropdown if open
+        if (giftDropdown) giftDropdown.style.display = 'none';
       });
-    });
-  
-    document.addEventListener('click', function(event) {
-      if (!event.target.closest('.language-switcher-container')) {
-        if (languageDropdown) {
-          languageDropdown.classList.remove('show');
-        }
+
+      const giftDropLink = document.getElementById('giftDropLink');
+      const giftDropdown = document.getElementById('giftDropdown');
+
+      if (giftDropLink && giftDropdown) {
+        giftDropLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          giftDropdown.style.display = (giftDropdown.style.display === 'block') ? 'none' : 'block';
+          // Close stripe dropdown if open
+          stripeDropdown.style.display = 'none';
+        });
       }
+
+      document.addEventListener('click', function(event) {
+        if (!stripeDropLink.contains(event.target) && !stripeDropdown.contains(event.target)) {
+          stripeDropdown.style.display = 'none';
+        }
+        if (giftDropLink && giftDropdown && !giftDropLink.contains(event.target) && !giftDropdown.contains(event.target)) {
+          giftDropdown.style.display = 'none';
+        }
+      });
+  </script>
+
+
+
+<div class="leagues-carousel-section">
+
+  <div class="leagues-carousel-title" data-i18n="common.carousel.trusted">Trusted by staff in</div>
+  <div class="leagues-carousel-track">
+    <!-- First set of logos -->
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/PremierLeague.png" alt="Premier League"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/LaLiga.png" alt="La Liga"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/SerieA.png" alt="Serie A"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Bundesliga.png" alt="Bundesliga"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Ligue1.png" alt="Ligue 1"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Eredivisie.png" alt="Eredivisie"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/PrimeiraLiga.png" alt="Primeira Liga"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Belgium.png" alt="Belgian Pro League"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Brazil.png" alt="Brazil Série A"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Ligue2.png" alt="Ligue 2"></div>
+    <div class="league-logo-wrapper text-logo">
+      <iconify-icon icon="mdi:earth"></iconify-icon>
+      <span data-i18n="common.carousel.andMore">And More</span>
+    </div>
+    <!-- Duplicate set for infinite loop -->
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/PremierLeague.png" alt="Premier League"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/LaLiga.png" alt="La Liga"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/SerieA.png" alt="Serie A"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Bundesliga.png" alt="Bundesliga"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Ligue1.png" alt="Ligue 1"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Eredivisie.png" alt="Eredivisie"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/PrimeiraLiga.png" alt="Primeira Liga"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Belgium.png" alt="Belgian Pro League"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Brazil.png" alt="Brazil Série A"></div>
+    <div class="league-logo-wrapper"><img src="https://datamb.football/leaguelogos/Ligue2.png" alt="Ligue 2"></div>
+    <div class="league-logo-wrapper text-logo">
+      <iconify-icon icon="mdi:earth"></iconify-icon>
+      <span data-i18n="common.carousel.andMore">And More</span>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+function setLanguage(language) {
+  localStorage.setItem('preferredLanguage', language);
+  const url = new URL(window.location.href);
+  if (language === 'en') {
+    url.searchParams.delete('lang');
+    applyLanguage('xx');
+  } else {
+    url.searchParams.set('lang', language);
+    applyLanguage(language);
+  }
+  window.history.pushState({}, '', url);
+}
+
+function getPreferredLanguage() {
+  // PRIORITY 1: Check URL parameter first
+  const urlParams = new URLSearchParams(window.location.search);
+  const langParam = urlParams.get('lang');
+  if (langParam) {
+    return langParam;
+  }
+  // PRIORITY 2: Check localStorage
+  const storedLang = localStorage.getItem('preferredLanguage');
+  if (storedLang) {
+    return storedLang;
+  }
+  // PRIORITY 3: Use browser language
+  return getBrowserLanguage() || 'en';
+}
+
+function getBrowserLanguage() {
+  return navigator.language.slice(0, 2);
+}
+
+function applyLanguage(language) {
+  console.log(language);
+
+  if (language === 'en') {
+    return;
+  }
+
+  
+  fetch(`locales/${language}.json`)
+    .then(response => {
+      // Don't throw an error, just return null if response is not OK
+      return response.ok ? response.json() : null;
+    })
+    .then(translations => {
+      // Only proceed if translations exist
+      if (translations) {
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+          const keys = element.getAttribute('data-i18n').split('.');
+          let value = translations;
+          for (const key of keys) {
+            if (value === undefined || value === null) break;
+            value = value[key];
+          }
+          if (value) {
+            if (element.tagName === 'META') {
+            element.setAttribute('content', value);
+        } else if (value.includes('<')) {
+            element.innerHTML = value;
+        } else {
+            element.textContent = value;
+        }          }
+        });
+        // REMOVE FOR PAGES WITH NO METADATA
+        document.querySelector('meta[name="language"]').setAttribute('content', language);
+      }
+    })
+    .catch(() => {
+      // Completely empty catch block to silently ignore any errors
+    });
+}
+
+const preferredLanguage = getPreferredLanguage();
+applyLanguage(preferredLanguage);
+
+// BUTTON LANGUAGE SWITCHER REMOVE FOR PAGES WITH NO LANGUAGE SWITCHER
+document.addEventListener('DOMContentLoaded', function() {
+  const languageButton = document.getElementById('languageButton');
+  const languageDropdown = document.getElementById('languageDropdown');
+  
+
+  if (languageButton) {
+    languageButton.addEventListener('click', function(e) {
+      e.stopPropagation();
+      languageDropdown.classList.toggle('show');
+    });
+  }
+
+  document.querySelectorAll('.language-option').forEach(option => {
+    option.addEventListener('click', function(e) {
+      e.preventDefault();
+      const lang = this.getAttribute('href').split('=')[1];
+      setLanguage(lang);
+      languageDropdown.classList.remove('show');
     });
   });
-    </script>
+
+  document.addEventListener('click', function(event) {
+    if (!event.target.closest('.language-switcher-container')) {
+      if (languageDropdown) {
+        languageDropdown.classList.remove('show');
+      }
+    }
+  });
+});
+  </script>
 
 </body>
 </html>
+
